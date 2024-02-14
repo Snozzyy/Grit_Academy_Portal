@@ -1,0 +1,4 @@
+org\example\Grit_Academy_Portal\resources\JavaEE8Resource.class
+servlets\TestServlet.class
+org\example\Grit_Academy_Portal\JAXRSConfiguration.class
+org\example\Grit_Academy_Portal\model\MySQLConnector.class
