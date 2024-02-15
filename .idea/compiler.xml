@@ -12,7 +12,7 @@
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
-      <module name="Grit_Academy_Portal" options="-endorseddirs C:\Users\olive\Desktop\Skola\Grit_Academy_Portal1\target/endorsed" />
+      <module name="Grit_Academy_Portal" options="-endorseddirs C:\Users\olive\Documents\GitHub\Grit_Academy_Portal\target/endorsed" />
     </option>
   </component>
 </project>
