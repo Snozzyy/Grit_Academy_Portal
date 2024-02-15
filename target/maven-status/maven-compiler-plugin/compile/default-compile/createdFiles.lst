@@ -1,4 +1,8 @@
 org\example\Grit_Academy_Portal\resources\JavaEE8Resource.class
-servlets\TestServlet.class
 org\example\Grit_Academy_Portal\JAXRSConfiguration.class
+servlets\LoginServlet.class
+servlets\RegisterServlet.class
+servlets\UserServlet.class
 org\example\Grit_Academy_Portal\model\MySQLConnector.class
+servlets\CoursesServlet.class
+org\example\Grit_Academy_Portal\model\UserBean.class

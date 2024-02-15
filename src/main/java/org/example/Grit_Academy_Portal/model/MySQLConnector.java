@@ -5,7 +5,7 @@ import java.util.LinkedList;
 
 public class MySQLConnector {
     // Use selectQuery with desired query as an argument to select from database
-    public LinkedList<String[]> selectQuery(String query, String user, String password) {
+    public static LinkedList<String[]> selectQuery(String query, String user, String password) {
         LinkedList<String[]> queryResult = new LinkedList<String[]>();
 
         try {
@@ -35,7 +35,7 @@ public class MySQLConnector {
     }
 
     // Use insertQuery with desired query as an argument to insert into database
-    public int insertQuery(String query, String user, String password ) {
+    public static int insertQuery(String query, String user, String password ) {
         // affectedRows is used to verify how many rows are created
         int affectedRows = 0;
 
