@@ -5,7 +5,7 @@ import java.util.LinkedList;
 
 public class MySQLConnector {
     // Use selectQuery with desired query as an argument to select from database
-    public static LinkedList<String[]> selectQuery(String query, String user, String password) {
+    public static LinkedList<String[]> selectQuery(String user, String password, String query) {
         LinkedList<String[]> queryResult = new LinkedList<String[]>();
 
         try {

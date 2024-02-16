@@ -6,7 +6,33 @@ public class UserBean implements Serializable {
     private String username;
     private String password;
     private int id;
-    private String userType;
+    private UserType userType;
+    private PrivilegeType privilegeType;
+    private StateType stateType;
+
+    public UserType getUserType() {
+        return userType;
+    }
+
+    public void setUserType(UserType userType) {
+        this.userType = userType;
+    }
+
+    public PrivilegeType getPrivilegeType() {
+        return privilegeType;
+    }
+
+    public void setPrivilegeType(PrivilegeType privilegeType) {
+        this.privilegeType = privilegeType;
+    }
+
+    public StateType getStateType() {
+        return stateType;
+    }
+
+    public void setStateType(StateType stateType) {
+        this.stateType = stateType;
+    }
 
     public String getUsername() {
         return username;
@@ -30,13 +56,5 @@ public class UserBean implements Serializable {
 
     public void setId(int id) {
         this.id = id;
-    }
-
-    public String getUserType() {
-        return userType;
-    }
-
-    public void setUserType(String userType) {
-        this.userType = userType;
     }
 }
