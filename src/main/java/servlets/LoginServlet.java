@@ -26,11 +26,11 @@ public class LoginServlet extends HttpServlet {
         // Search both student and teacher table for matching username and password.
         // Get their name, user_type and privilege_type
         String query = String.format(
-                "(SELECT fname, lname, 'student' AS user_type, 'user' AS privilege_type " +
-                "FROM students" +
+                "(SELECT id, fname, lname, 'student' AS user_type, 'user' AS privilege_type " +
+                "FROM students " +
                 "WHERE username = '%s' AND password = '%s') " +
                 "UNION ALL " +
-                "(SELECT fname, lname, 'teacher' AS user_type, privilege_type " +
+                "(SELECT id, fname, lname, 'teacher' AS user_type, privilege_type " +
                 "FROM teachers " +
                 "WHERE username = '%s' AND password = '%s');", username, password, username, password);
 
@@ -38,17 +38,27 @@ public class LoginServlet extends HttpServlet {
 
         // Checks if user with username and password exists
         if (!userData.isEmpty()) {
-            // userData[0][2] contains user_type
-            String userType = userData.get(0)[2];
-            // userData[0][3] contains privilege_type
-            String privilegeType = userData.get(0)[3];
+            int id = Integer.parseInt(userData.get(0)[0]);
+            String userType = userData.get(0)[3];
+            String privilegeType = userData.get(0)[4];
+            String fname = userData.get(0)[1];
 
             UserBean userBean = new UserBean();
+            userBean.setId(id);
             userBean.setStateType(StateType.confirmed);
             userBean.setUserType(UserType.valueOf(userType));
             userBean.setPrivilegeType(PrivilegeType.valueOf(privilegeType));
+            userBean.setFname(fname);
+
+            req.getSession().setAttribute("userBean", userBean);
+            req.getRequestDispatcher("JSP/userpage.jsp").forward(req, resp);
+
+            // Testing only
+            System.out.println(userBean.getId() + "\n" + userBean.getStateType() + "\n" + userBean.getUserType() + "\n" + userBean.getPrivilegeType() + "\n");
+
         } else {
-            System.out.println("User doesn't exist");
+            req.getSession().setAttribute("errorMessage", "User does not exist");
+            req.getRequestDispatcher("JSP/login.jsp").forward(req, resp);
         }
     }
 }

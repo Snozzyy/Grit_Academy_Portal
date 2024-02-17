@@ -6,6 +6,7 @@ public class UserBean implements Serializable {
     private String username;
     private String password;
     private int id;
+    private String fname;
     private UserType userType;
     private PrivilegeType privilegeType;
     private StateType stateType;
@@ -34,6 +35,9 @@ public class UserBean implements Serializable {
         this.stateType = stateType;
     }
 
+
+
+
     public String getUsername() {
         return username;
     }
@@ -56,5 +60,13 @@ public class UserBean implements Serializable {
 
     public void setId(int id) {
         this.id = id;
+    }
+
+    public String getFname(){
+        return fname;
+    }
+
+    public void setFname(String fname){
+        this.fname = fname;
     }
 }

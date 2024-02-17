@@ -10,8 +10,7 @@ public class MySQLConnector {
 
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
-            Connection con = DriverManager.getConnection("jdbc:mysql://localhost:13306/gritacademy",
-                    user, password);
+            Connection con = DriverManager.getConnection("jdbc:mysql://localhost:13306/gritacademy", user, password);
 
             Statement stmt = con.createStatement();
             ResultSet rs = stmt.executeQuery(query);
