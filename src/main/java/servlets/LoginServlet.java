@@ -44,12 +44,14 @@ public class LoginServlet extends HttpServlet {
             String fname = userData.get(0)[1];
 
             UserBean userBean = new UserBean();
+            // Should be fixed in default constructor
             userBean.setId(id);
-            userBean.setStateType(StateType.confirmed);
+            userBean.setStateType(StateType.confirmed); // set in context, ask Lukas if it's correct
             userBean.setUserType(UserType.valueOf(userType));
             userBean.setPrivilegeType(PrivilegeType.valueOf(privilegeType));
             userBean.setFname(fname);
 
+            req.getServletContext().setAttribute("userState", StateType.confirmed);
             req.getSession().setAttribute("userBean", userBean);
             req.getRequestDispatcher("JSP/userpage.jsp").forward(req, resp);
 

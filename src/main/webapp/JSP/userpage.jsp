@@ -8,6 +8,7 @@
     <title>Document</title>
 </head>
 <body>
+    <%@ include file="fragments/header.jsp" %>
     <c:choose>
         <c:when test="${userBean.userType == 'student'}">
             Welcome Student!

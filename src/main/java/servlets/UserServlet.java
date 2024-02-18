@@ -16,7 +16,7 @@ public class UserServlet extends HttpServlet {
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         UserBean userBean = (UserBean) req.getSession().getAttribute("userBean");
         if (userBean.getStateType() == StateType.confirmed) {
-            req.getRequestDispatcher("JSP/login.jsp").forward(req,resp);
+            req.getRequestDispatcher("JSP/userpage.jsp").forward(req,resp);
         } else {
             req.getRequestDispatcher("/login").forward(req,resp);
         }

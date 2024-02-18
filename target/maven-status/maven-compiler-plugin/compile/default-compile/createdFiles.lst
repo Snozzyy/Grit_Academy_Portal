@@ -1,9 +1,9 @@
+servlets\WebAppInit.class
 org\example\Grit_Academy_Portal\JAXRSConfiguration.class
 org\example\Grit_Academy_Portal\model\UserType.class
 servlets\LoginServlet.class
 servlets\RegisterServlet.class
 servlets\UserServlet.class
-servlets\WebAbbInit.class
 org\example\Grit_Academy_Portal\model\MySQLConnector.class
 org\example\Grit_Academy_Portal\model\StateType.class
 org\example\Grit_Academy_Portal\resources\JavaEE8Resource.class
