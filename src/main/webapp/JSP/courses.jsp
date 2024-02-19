@@ -9,5 +9,7 @@
 </head>
 <body>
     <%@ include file="fragments/header.jsp" %>
+    <h1>Welcome to courses!</h1><br>
+    Show all available courses here
 </body>
 </html>

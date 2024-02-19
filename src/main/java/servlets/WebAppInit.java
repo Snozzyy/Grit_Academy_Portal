@@ -12,7 +12,7 @@ public class WebAppInit implements ServletContextListener {
     @Override
     public void contextInitialized(ServletContextEvent sce) {
         // Default StateType should be anonymous
-        sce.getServletContext().setAttribute("userState", StateType.anonymous);
+        sce.getServletContext().setAttribute("stateType", StateType.anonymous);
     }
 
     @Override
