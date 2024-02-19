@@ -5,11 +5,27 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Courses</title>
 </head>
 <body>
     <%@ include file="fragments/header.jsp" %>
     <h1>Welcome to courses!</h1><br>
-    Show all available courses here
+    Show all available courses here<br><br>
+    <div class="tables">  
+        <table>
+            <tr>
+                <th>Name</th>
+                <th>YHP</th>
+                <th>Description</th>
+            </tr>
+            <c:forEach items="${courseList}" var="dataPoint">
+                <tr>
+                    <td>${dataPoint[0]}</td>
+                    <td>${dataPoint[1]}</td>
+                    <td>${dataPoint[2]}</td>
+                </tr>  
+            </c:forEach>
+        </table> 
+    </div>
 </body>
 </html>
