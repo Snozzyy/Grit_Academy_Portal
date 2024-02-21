@@ -34,7 +34,7 @@ public class LoginServlet extends HttpServlet {
                 int id = Integer.parseInt(userData.get(0)[0]);
                 String fname = userData.get(0)[1];
 
-                req.getSession().setMaxInactiveInterval(60);
+                req.getSession().setMaxInactiveInterval(300);
                 UserBean userBean = new UserBean(StateType.confirmed, UserType.student, PrivilegeType.user, fname, id);
                 req.getSession().setAttribute("userBean", userBean);
                 req.getRequestDispatcher("/index.jsp").forward(req, resp);
@@ -55,7 +55,7 @@ public class LoginServlet extends HttpServlet {
                 String fname = userData.get(0)[1];
                 PrivilegeType privilegeType = PrivilegeType.valueOf(userData.get(0)[2]);
 
-                req.getSession().setMaxInactiveInterval(60);
+                req.getSession().setMaxInactiveInterval(300);
                 UserBean userBean = new UserBean(StateType.confirmed, UserType.teacher, privilegeType, fname, id);
                 req.getSession().setAttribute("userBean", userBean);
                 req.getRequestDispatcher("/index.jsp").forward(req, resp);

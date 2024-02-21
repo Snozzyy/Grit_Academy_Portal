@@ -12,6 +12,12 @@ import java.io.IOException;
 
 @WebServlet(name = "logout", urlPatterns = "/logout")
 public class LogoutServlet extends HttpServlet {
+
+    @Override
+    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        req.getRequestDispatcher("JSP/userPage.jsp").forward(req, resp);
+    }
+
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         UserBean userBean = (UserBean) req.getSession().getAttribute("userBean");

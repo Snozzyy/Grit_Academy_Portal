@@ -11,9 +11,9 @@ public class QuerySelector {
     public static LinkedList<String[]> userCourses(int id) {
         String query = String.format(
                 "SELECT c.name, c.yhp, c.description FROM courses = c " +
-                        "INNER JOIN students_courses = sc " +
-                        "ON c.id = sc.courses_id " +
-                        "WHERE sc.students_id = %d;", id);
+                "INNER JOIN students_courses = sc " +
+                "ON c.id = sc.courses_id " +
+                "WHERE sc.students_id = %d;", id);
 
         return MySQLConnector.selectQuery("root", "", query);
     }
@@ -36,6 +36,16 @@ public class QuerySelector {
                 "ON c.id = tc.courses_id\n" +
                 "WHERE c.name = '%s';", course, course);
 
+        return MySQLConnector.selectQuery("root", "", query);
+    }
+
+    public static LinkedList<String[]> allCourses() {
+        String query = "SELECT name, yhp, description FROM courses;";
+        return MySQLConnector.selectQuery("root", "", query);
+    }
+
+    public static LinkedList<String[]> allStudents() {
+        String query = "SELECT id, fname, lname, town, email, phone FROM students;";
         return MySQLConnector.selectQuery("root", "", query);
     }
 }

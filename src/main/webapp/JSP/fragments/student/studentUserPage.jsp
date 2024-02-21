@@ -16,31 +16,31 @@
             </tr>
         </c:forEach>
     </table><br>
+
     <form action="/user" method="post">
         <select name="course" id="course">
             <c:forEach items="${data}" var="dataPoint">
-            <option value="${dataPoint[0]}">${dataPoint[0]}</td>
-        </c:forEach>
+                <option value="${dataPoint[0]}">${dataPoint[0]}</td>
+            </c:forEach>
         </select> 
         <input type="submit" value="Show">
     </form>
+
     <c:choose>
         <c:when test="${courseData != null}">
             <h2>${courseName}</h2>
-            <div class="tables">
-                <table>
+            <table>
+                <tr>
+                    <th>Name</th>
+                    <th>Role</th>
+                </tr>
+                <c:forEach items="${courseData}" var="dataPoint">
                     <tr>
-                        <th>Name</th>
-                        <th>Role</th>
+                        <td>${dataPoint[0]} ${dataPoint[1]}</td>
+                        <td>${dataPoint[2]}</td>
                     </tr>
-                    <c:forEach items="${courseData}" var="dataPoint">
-                        <tr>
-                            <td>${dataPoint[0]} ${dataPoint[1]}</td>
-                            <td>${dataPoint[2]}</td>
-                        </tr>
-                    </c:forEach>
-                </table>
-            </div>
+                </c:forEach>
+            </table>
         </c:when>
     </c:choose>
 </div>

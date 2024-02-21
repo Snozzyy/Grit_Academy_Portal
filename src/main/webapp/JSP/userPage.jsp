@@ -14,7 +14,7 @@
             <%@ include file="fragments/student/studentUserPage.jsp" %>
         </c:when>
         <c:when test="${userBean.userType == 'teacher'}">
-            Welcome Teacher
+            <%@ include file="fragments/teacher/teacherUserPage.jsp" %>
         </c:when>
     </c:choose>
 </body>

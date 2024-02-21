@@ -1,6 +1,7 @@
 package servlets;
 
 import model.MySQLConnector;
+import model.QuerySelector;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -14,8 +15,7 @@ import java.util.LinkedList;
 public class CoursesServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        String query = "SELECT name, yhp, description FROM courses";
-        LinkedList<String[]> courseList = MySQLConnector.selectQuery("root", "", query);
+        LinkedList<String[]> courseList = QuerySelector.allCourses();
 
         req.setAttribute("courseList", courseList);
         req.getRequestDispatcher("JSP/courses.jsp").forward(req, resp);
@@ -23,6 +23,6 @@ public class CoursesServlet extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-
+        req.getRequestDispatcher("JSP/userPage.jsp").forward(req, resp);
     }
 }
