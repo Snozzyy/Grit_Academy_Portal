@@ -7,7 +7,7 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     </head>
     <body>
-        <%@ include file="JSP/fragments/header.jsp" %>
+        <%@ include file="JSP/fragments/navbar.jsp" %>
         <h1>Hello World!</h1>
     </body>
 </html>

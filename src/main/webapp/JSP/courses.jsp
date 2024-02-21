@@ -8,10 +8,10 @@
     <title>Courses</title>
 </head>
 <body>
-    <%@ include file="fragments/header.jsp" %>
+    <%@ include file="fragments/navbar.jsp" %>
     <h1>Welcome to courses!</h1><br>
     Show all available courses here<br><br>
-    <div class="tables">  
+    <div class="tables">
         <table>
             <tr>
                 <th>Name</th>
@@ -23,9 +23,9 @@
                     <td>${dataPoint[0]}</td>
                     <td>${dataPoint[1]}</td>
                     <td>${dataPoint[2]}</td>
-                </tr>  
+                </tr>
             </c:forEach>
-        </table> 
+        </table>
     </div>
 </body>
 </html>

@@ -8,10 +8,10 @@
     <title>Document</title>
 </head>
 <body>
-    <%@ include file="fragments/header.jsp" %>
+    <%@ include file="fragments/navbar.jsp" %>
     <c:choose>
         <c:when test="${userBean.userType == 'student'}">
-            Welcome Student!
+            <%@ include file="fragments/student/studentUserPage.jsp" %>
         </c:when>
         <c:when test="${userBean.userType == 'teacher'}">
             Welcome Teacher

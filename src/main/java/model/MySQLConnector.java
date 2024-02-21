@@ -1,4 +1,4 @@
-package org.example.Grit_Academy_Portal.model;
+package model;
 
 import java.sql.*;
 import java.util.LinkedList;

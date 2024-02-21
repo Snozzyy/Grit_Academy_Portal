@@ -1,0 +1,8 @@
+127.0.0.1 - - [20/Feb/2024:21:57:14 +0100] "GET / HTTP/1.1" 200 479 http-bio-9090-exec-1 413
+127.0.0.1 - - [20/Feb/2024:21:57:14 +0100] "GET /favicon.ico HTTP/1.1" 404 973 http-bio-9090-exec-2 2
+127.0.0.1 - - [20/Feb/2024:21:57:15 +0100] "GET /login HTTP/1.1" 200 847 http-bio-9090-exec-4 66
+127.0.0.1 - - [20/Feb/2024:21:57:15 +0100] "GET /favicon.ico HTTP/1.1" 404 973 http-bio-9090-exec-5 0
+127.0.0.1 - - [20/Feb/2024:21:57:19 +0100] "POST /login HTTP/1.1" 200 695 http-bio-9090-exec-7 185
+127.0.0.1 - - [20/Feb/2024:21:57:21 +0100] "POST /login HTTP/1.1" 302 - http-bio-9090-exec-8 1
+127.0.0.1 - - [20/Feb/2024:21:57:21 +0100] "GET /index.jsp HTTP/1.1" 200 479 http-bio-9090-exec-9 1
+127.0.0.1 - - [20/Feb/2024:21:57:22 +0100] "GET /login HTTP/1.1" 200 847 http-bio-9090-exec-10 1

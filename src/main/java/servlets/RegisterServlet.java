@@ -1,8 +1,7 @@
 package servlets;
 
-import org.example.Grit_Academy_Portal.model.StateType;
-import org.example.Grit_Academy_Portal.model.UserBean;
-import org.example.Grit_Academy_Portal.model.UserType;
+import model.UserBean;
+import model.UserType;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
