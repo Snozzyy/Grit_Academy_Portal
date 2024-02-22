@@ -10,12 +10,16 @@
     </head>
     <body>
         <%@ include file="fragments/navbar.jsp" %>
+        <h1>Log in</h1>
+        <p>Please write your username, password and choose your user type.</p>
+        <p>${errorMessage}</p>
         <div class="form">
             <form action="/login" method="post">
                 <label for="username">Username:</label>
                 <input type="text" id="username" name="username"><br>
                 <label for="password">Password:</label>
                 <input type="password" id="password" name="password"><br>
+                User type:
                 <label for="student">Student</label>
                 <input type="radio" id="student" name="user_type" value="student" checked>
                 <label for="teacher">Teacher</label>

@@ -9,6 +9,6 @@
     </head>
     <body>
         <%@ include file="JSP/fragments/navbar.jsp" %>
-        <h1>Hello World!</h1>
+        <h1>Welcome to Grit Academy!</h1>
     </body>
 </html>

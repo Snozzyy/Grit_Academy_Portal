@@ -38,7 +38,7 @@ public class LoginServlet extends HttpServlet {
 
             // If user doesn't exist, show error message
             } else {
-                req.getSession().setAttribute("errorMessage", "No user found");
+                req.setAttribute("errorMessage", "User not found, try again!");
                 req.getRequestDispatcher("JSP/login.jsp").forward(req, resp);
             }
         } else {

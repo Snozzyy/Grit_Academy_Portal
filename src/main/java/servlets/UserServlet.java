@@ -49,7 +49,6 @@ public class UserServlet extends HttpServlet {
 
             req.setAttribute("courseName", course);
             req.setAttribute("courseData", courseInfo);
-
             req.getRequestDispatcher("JSP/userPage.jsp").forward(req, resp);
         // For teachers
         } else if (userBean != null && userBean.getUserType() == UserType.teacher) {

@@ -1,5 +1,6 @@
 package servlets;
 
+import model.PrivilegeType;
 import model.UserBean;
 import model.UserType;
 
@@ -15,13 +16,11 @@ public class RegisterServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         UserBean userBean = (UserBean) req.getSession().getAttribute("userBean");
-        if (userBean.getUserType() == UserType.teacher) {
-
+        if ( userBean != null && userBean.getUserType() == UserType.teacher && userBean.getPrivilegeType() == PrivilegeType.admin) {
+            req.getRequestDispatcher("JSP/register.jsp").forward(req, resp);
         } else {
-            req.getRequestDispatcher("JSP/user.jsp").forward(req, resp);
+            req.getRequestDispatcher("/user").forward(req, resp);
         }
-
-        req.getRequestDispatcher("JSP/userPage.jsp").forward(req, resp);
     }
 
     @Override
