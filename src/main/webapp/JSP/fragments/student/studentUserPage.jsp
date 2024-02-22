@@ -3,6 +3,7 @@
 <h1>Your courses</h1>
 <div class="tables">
     <table>
+        <caption>Your courses</caption>
         <tr>
             <th>Name</th>
             <th>YHP</th>
@@ -16,20 +17,22 @@
             </tr>
         </c:forEach>
     </table><br>
+</div>
 
-    <form action="/user" method="post">
-        <select name="course" id="course">
-            <c:forEach items="${data}" var="dataPoint">
-                <option value="${dataPoint[0]}">${dataPoint[0]}</td>
-            </c:forEach>
-        </select> 
-        <input type="submit" value="Show">
-    </form>
+<form action="/user" method="post">
+    <select name="course" id="course">
+        <c:forEach items="${data}" var="dataPoint">
+            <option value="${dataPoint[0]}">${dataPoint[0]}</td>
+        </c:forEach>
+    </select>
+    <input type="submit" value="Show">
+</form>
 
+<div class="tables">
     <c:choose>
         <c:when test="${courseData != null}">
-            <h2>${courseName}</h2>
             <table>
+                <caption>${courseName}</caption>
                 <tr>
                     <th>Name</th>
                     <th>Role</th>

@@ -4,8 +4,9 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Start Page</title>
+        <title>Log in</title>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <link rel="stylesheet" href="CSS/style.css">
     </head>
     <body>
         <%@ include file="fragments/navbar.jsp" %>

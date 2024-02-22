@@ -3,7 +3,8 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Start Page</title>
+        <link rel="stylesheet" href="CSS/style.css">
+        <title>Home</title>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     </head>
     <body>

@@ -24,12 +24,9 @@ public class LoginServlet extends HttpServlet {
         String userType = req.getParameter("user_type");
 
         if (userType.equals("student")) {
-            String query = String.format(
-                    "SELECT id, fname, lname FROM students WHERE username = '%s' AND password = '%s';",
-                    username, password);
+            LinkedList<String[]> userData = QuerySelector.logInStudent(username, password);
 
-            LinkedList<String[]> userData = MySQLConnector.selectQuery("root", "", query);
-
+            // If user exist, change UserBean and redirect
             if (!userData.isEmpty()) {
                 int id = Integer.parseInt(userData.get(0)[0]);
                 String fname = userData.get(0)[1];
@@ -39,17 +36,15 @@ public class LoginServlet extends HttpServlet {
                 req.getSession().setAttribute("userBean", userBean);
                 req.getRequestDispatcher("/index.jsp").forward(req, resp);
 
+            // If user doesn't exist, show error message
             } else {
                 req.getSession().setAttribute("errorMessage", "No user found");
                 req.getRequestDispatcher("JSP/login.jsp").forward(req, resp);
             }
         } else {
-            String query = String.format(
-                "SELECT id, fname, privilege_type FROM teachers WHERE username = '%s' AND password = '%s';",
-                username, password);
+            LinkedList<String[]> userData = QuerySelector.logInTeacher(username, password);
 
-            LinkedList<String[]> userData = MySQLConnector.selectQuery("root", "", query);
-
+            // If user exist, change UserBean and redirect
             if (!userData.isEmpty()) {
                 int id = Integer.parseInt(userData.get(0)[0]);
                 String fname = userData.get(0)[1];
@@ -60,6 +55,7 @@ public class LoginServlet extends HttpServlet {
                 req.getSession().setAttribute("userBean", userBean);
                 req.getRequestDispatcher("/index.jsp").forward(req, resp);
 
+            // If user doesn't exist, show error message
             } else {
                 req.getSession().setAttribute("errorMessage", "No user found");
                 req.getRequestDispatcher("JSP/login.jsp").forward(req, resp);

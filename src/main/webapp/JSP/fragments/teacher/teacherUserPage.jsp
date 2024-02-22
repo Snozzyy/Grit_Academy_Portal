@@ -2,8 +2,8 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 
 <div class="tables">
-    <h1>All students</h1>
     <table>
+        <caption>All students</caption>
         <tr>
             <th>ID</th>
             <th>Name</th>
@@ -20,22 +20,10 @@
                 <td>${dataPoint[5]}</td>
             </tr>
         </c:forEach>
-    </table><br>
-</div>
+    </table>
 
-<form action="/user" method="post">
-    <select name="student" id="student">
-        <c:forEach items="${studentsData}" var="dataPoint">
-            <option value="${dataPoint[0]}">${dataPoint[0]} - ${dataPoint[1]} ${dataPoint[2]}</option>
-        </c:forEach>
-    </select> 
-    <input type="submit" value="Show">
-</form>
-
-
-<div class="tables">
-    <h1>All courses</h1>
     <table>
+    <caption>All courses</caption>
         <tr>
             <th>Name</th>
             <th>YHP</th>
@@ -51,21 +39,30 @@
     </table>
 </div>
 
-<form action="/user" method="post">
-    <select name="course" id="course">
-        <c:forEach items="${coursesData}" var="dataPoint">
-            <option value="${dataPoint[0]}">${dataPoint[0]}</option>
-        </c:forEach>
-    </select> 
-<input type="submit" value="Show">
-</form>
+<div class="forms">
+    <form action="/user" method="post">
+        <select name="student" id="student">
+            <c:forEach items="${studentsData}" var="dataPoint">
+                <option value="${dataPoint[0]}">${dataPoint[0]} - ${dataPoint[1]} ${dataPoint[2]}</option>
+            </c:forEach>
+        </select>
+        <input type="submit" value="Show">
+    </form>
+    <form action="/user" method="post">
+        <select name="course" id="course">
+            <c:forEach items="${coursesData}" var="dataPoint">
+                <option value="${dataPoint[0]}">${dataPoint[0]}</option>
+            </c:forEach>
+        </select> 
+        <input type="submit" value="Show">
+    </form>
+</div>
 
-<br>
 <div class="tables">
     <c:choose>
         <c:when test="${studentData != null}">
-            <h2>Info about student</h2>
             <table>
+                <caption>Info about student</caption>
                 <tr>
                     <th>Name</th>
                     <th>YHP</th>
@@ -81,8 +78,8 @@
             </table>
         </c:when>
         <c:when test="${courseData != null}">
-            <h2>${courseName}</h2>
             <table>
+                <caption>Info about ${courseName}</caption>
                 <tr>
                     <th>Name</th>
                     <th>Role</th>

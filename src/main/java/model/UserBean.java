@@ -3,9 +3,9 @@ package model;
 import java.io.Serializable;
 
 public class UserBean implements Serializable {
-    private StateType stateType;
+    private StateType stateType = StateType.anonymous;
     private UserType userType;
-    private PrivilegeType privilegeType;
+    private PrivilegeType privilegeType = PrivilegeType.user;
     private String fname;
     private int id;
 
